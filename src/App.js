@@ -1,8 +1,9 @@
-import "./styles/App.css";
+import "./App.scss";
+import Navbar from "./components/Navbar/Navbar.js";
 
 const App = () => (
   <div>
-    App
+    <Navbar />
   </div>
 )
 
