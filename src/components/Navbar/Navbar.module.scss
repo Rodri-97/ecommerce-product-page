@@ -1,3 +1,23 @@
 .nav {
-    background: blue;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px;
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logoContainer {
+        flex-grow: 1;
+        justify-content: flex-start;
+    }
+
+    .avatar {
+        height: 40px;
+        width: 40px;
+    }
 }
