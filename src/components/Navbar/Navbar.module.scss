@@ -20,4 +20,38 @@
         height: 40px;
         width: 40px;
     }
+
+    .hamburgerMenu {
+        cursor: pointer;
+    }
+
+    .hideMenu {
+        display: none;
+    }
+
+    .expandMenu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        list-style-type: none;
+        position: absolute;
+        top: 80px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        gap: 20px;
+        padding: 20px;
+        width: 100%;
+        background: white;
+
+        .menuElement {
+            color: gray;
+            border: 3px solid transparent;
+            cursor: pointer;
+
+            &:hover {
+                border-bottom-color: gray;
+            }
+        }
+    }
 }
