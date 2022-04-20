@@ -4,7 +4,24 @@ import IconMinus from "../../images/icon-minus.svg";
 import IconPlus from "../../images/icon-plus.svg";
 import WhiteIconCart from "../../images/white-icon-cart.svg";
 
+import { useState } from "react";
+
 const Description = () => {
+    const [cartQuantity, setCartQuantity] = useState(0);
+
+    const reduceCartQuantity = () => {
+        if (cartQuantity < 1) return;
+        setCartQuantity(cartQuantity - 1);
+    }
+
+    const increaseCartQuantity = () => {
+        if (cartQuantity > 99) {
+            alert("C'mon, what are you gonna do with all those shoes?");
+            return;
+        }
+        setCartQuantity(cartQuantity + 1);
+    }
+
     return (
         <div className="description">
 
@@ -25,13 +42,19 @@ const Description = () => {
             </div>
 
             <div className="cart-quantity-container">
-                <div className="minus-container">
+                <div 
+                    className="minus-container"
+                    onClick={() => reduceCartQuantity()}
+                >
                     <img src={IconMinus} alt="Minus Icon"/>
                 </div>
 
-                <div className="cart-quantity">0</div>
+                <div className="cart-quantity">{cartQuantity}</div>
                 
-                <div className="plus-container">
+                <div 
+                    className="plus-container"
+                    onClick={() => increaseCartQuantity()}
+                >
                     <img src={IconPlus} alt="Plus Icon"/>
                 </div>
             </div>
