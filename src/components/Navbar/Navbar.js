@@ -1,4 +1,4 @@
-import styles from "./Navbar.module.scss";
+import "./_Navbar.scss";
 
 import menuIcon from "../../images/icon-menu.svg";
 import logoImg from "../../images/logo.svg";
@@ -6,11 +6,6 @@ import cartIcon from "../../images/icon-cart.svg";
 import avatarImg from "../../images/image-avatar.png";
 
 import { useState, useEffect } from "react";
-
-const { 
-        nav, container, logoContainer, avatar, hamburgerMenu, 
-        expandMenu, hideMenu, menuElement 
-} = styles;
 
 const Navbar = () => {
     const maxMobileWidth = 800;
@@ -26,33 +21,33 @@ const Navbar = () => {
     const [displayMenu, setDisplayMenu] = useState(false);
 
     return (
-        <nav className={nav}>
-            <div className={container}>
+        <nav className="nav">
+            <div className="container">
                 <img src={menuIcon} 
                      alt="Menu Icon" 
-                     className={hamburgerMenu} 
+                     className="hamburger-menu" 
                      onClick={() => setDisplayMenu(!displayMenu)}
                 />
             </div>
 
-            <div className={[container, logoContainer].join(" ")}>
+            <div className="container logo-container">
                 <img src={logoImg} alt="Logo" />
             </div>
 
-            <div className={container}>
+            <div className="container">
                 <img src={cartIcon} alt="Cart Icon" />
             </div>
 
-            <div className={container}>
-                <img src={avatarImg} className={avatar} alt="Avatar" />
+            <div className="container">
+                <img src={avatarImg} className="avatar" alt="Avatar" />
             </div>
 
-            <ul className={(displayMenu && isMobile) ? expandMenu : hideMenu}>
-                <li className={menuElement}>Collections</li>
-                <li className={menuElement}>Men</li>
-                <li className={menuElement}>Women</li>
-                <li className={menuElement}>About</li>
-                <li className={menuElement}>Contact</li>
+            <ul className={(displayMenu && isMobile) ? "expand-menu" : "hide-menu"}>
+                <li className="menu-element">Collections</li>
+                <li className="menu-element">Men</li>
+                <li className="menu-element">Women</li>
+                <li className="menu-element">About</li>
+                <li className="menu-element">Contact</li>
             </ul>
         </nav>
     )

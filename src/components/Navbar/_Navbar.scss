@@ -11,7 +11,7 @@
         align-items: center;
     }
 
-    .logoContainer {
+    .logo-container {
         flex-grow: 1;
         justify-content: flex-start;
     }
@@ -21,15 +21,15 @@
         width: 40px;
     }
 
-    .hamburgerMenu {
+    .hamburger-menu {
         cursor: pointer;
     }
 
-    .hideMenu {
+    .hide-menu {
         display: none;
     }
 
-    .expandMenu {
+    .expand-menu {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -44,7 +44,7 @@
         width: 100%;
         background: white;
 
-        .menuElement {
+        .menu-element {
             color: gray;
             border: 3px solid transparent;
             cursor: pointer;
