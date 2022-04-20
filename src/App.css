@@ -1,7 +1,13 @@
+@font-face {
+  font-family: "Kumbh Sans";
+  src: url("./fonts/Kumbh_Sans/KumbhSans-VariableFont_wght.ttf");
+}
+
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: "Kumbh Sans";
 }
 /*# sourceMappingURL=App.css.map */

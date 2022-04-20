@@ -1,0 +1,108 @@
+$specialOrange: hsl(26, 100%, 55%);
+$paleOrange: hsl(25, 100%, 94%);
+$deductionPadding: 5px;
+
+.description {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+
+    .subtitle {
+        color: $specialOrange;
+        letter-spacing: 2px;
+    }
+
+    .title {
+        font-size: 35px;
+    }
+
+    .text {
+        color: gray;
+        line-height: 1.5;
+    }
+
+    .prices {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+
+        .new-price, .old-price, .deduction-container {
+            font-weight: bold;
+        }
+
+        .new-price {
+            font-size: 30px;
+        }
+
+        .deduction-container {
+            flex-grow: 1;
+            padding: $deductionPadding;
+
+            .deduction {
+                color: $specialOrange;
+                background: $paleOrange;
+                padding: $deductionPadding;
+            }
+        }
+
+        .old-price {
+            color: gray;
+            text-decoration: line-through;
+        }
+    }
+
+    .cart-quantity-container, .add-to-cart {
+        border-radius: 10px;
+    }
+
+    .cart-quantity-container {
+        margin: 10px 0;
+        background: rgb(235, 235, 235);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .minus-container, .plus-container {
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .minus-container {
+            justify-content: flex-start;
+        }
+
+        .cart-quantity {
+            justify-content: center;
+        }
+
+        .plus-container {
+            justify-content: flex-end;
+        }
+    }
+
+    .cart-quantity-container > * {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .add-to-cart {
+        background: $specialOrange;
+        color: white;
+        font-weight: bold;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 15px 0;
+        cursor: pointer;
+    }
+}
+
+.description > * {
+    padding: 10px 0;
+}

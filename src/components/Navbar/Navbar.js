@@ -1,9 +1,9 @@
 import "./_Navbar.scss";
 
-import menuIcon from "../../images/icon-menu.svg";
-import logoImg from "../../images/logo.svg";
-import cartIcon from "../../images/icon-cart.svg";
-import avatarImg from "../../images/image-avatar.png";
+import MenuIcon from "../../images/icon-menu.svg";
+import LogoImg from "../../images/logo.svg";
+import GrayIconCart from "../../images/gray-icon-cart.svg";
+import AvatarImg from "../../images/image-avatar.png";
 
 import { useState, useEffect } from "react";
 
@@ -28,7 +28,7 @@ const Navbar = () => {
     return (
         <nav className="nav">
             <div className="container">
-                <img src={menuIcon} 
+                <img src={MenuIcon} 
                      alt="Menu Icon" 
                      className="hamburger-menu" 
                      onClick={() => setDisplayMenu(!displayMenu)}
@@ -36,15 +36,19 @@ const Navbar = () => {
             </div>
 
             <div className="container logo-container">
-                <img src={logoImg} alt="Logo" />
+                <img src={LogoImg} alt="Logo" />
             </div>
 
             <div className="container">
-                <img src={cartIcon} alt="Cart Icon" />
+                <img 
+                    src={GrayIconCart} 
+                    alt="Cart Icon"
+                    className="cart-icon" 
+                />
             </div>
 
             <div className="container">
-                <img src={avatarImg} className="avatar" alt="Avatar" />
+                <img src={AvatarImg} className="avatar" alt="Avatar" />
             </div>
 
             <ul className={(displayMenu && isMobile) ? "expand-menu" : "hide-menu"}>
