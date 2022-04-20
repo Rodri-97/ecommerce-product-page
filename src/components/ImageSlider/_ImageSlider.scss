@@ -1,6 +1,8 @@
 $arrowMargin: 20px;
 
 .image-slider {
+    border: 3px solid red;
+
     .current-image-container {
         position: relative;
 
@@ -26,6 +28,7 @@ $arrowMargin: 20px;
 
         .current-image {
             width: 100%;
+            display: block;
         }
     }
 }
