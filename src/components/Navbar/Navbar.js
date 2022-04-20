@@ -20,6 +20,11 @@ const Navbar = () => {
 
     const [displayMenu, setDisplayMenu] = useState(false);
 
+    const listElements = ["Collections", "Men", "Women", "About", "Contact"];
+    const displayedList = listElements.map((element) => {
+        return <li key={element} className="menu-element">{element}</li>
+    })
+
     return (
         <nav className="nav">
             <div className="container">
@@ -43,11 +48,7 @@ const Navbar = () => {
             </div>
 
             <ul className={(displayMenu && isMobile) ? "expand-menu" : "hide-menu"}>
-                <li className="menu-element">Collections</li>
-                <li className="menu-element">Men</li>
-                <li className="menu-element">Women</li>
-                <li className="menu-element">About</li>
-                <li className="menu-element">Contact</li>
+                {displayedList}
             </ul>
         </nav>
     )
