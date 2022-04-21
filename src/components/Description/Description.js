@@ -7,10 +7,10 @@ import WhiteIconCart from "../../images/white-icon-cart.svg";
 import { useState } from "react";
 
 const Description = () => {
-    const [cartQuantity, setCartQuantity] = useState(0);
+    const [cartQuantity, setCartQuantity] = useState(1);
 
     const reduceCartQuantity = () => {
-        if (cartQuantity < 1) return;
+        if (cartQuantity < 2) return;
         setCartQuantity(cartQuantity - 1);
     }
 
@@ -36,7 +36,7 @@ const Description = () => {
             </p>
 
             <div className="prices">
-                <div className="new-price">$125.00</div>
+                <div className="new-price">${(125 * cartQuantity).toFixed(2)}</div>
                 <div className="deduction-container"><span className="deduction">50%</span></div>
                 <div className="old-price">$250.00</div>
             </div>
