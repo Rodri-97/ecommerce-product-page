@@ -9,15 +9,30 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-
-        .cart-icon {
-            cursor: pointer;
-        }
     }
 
     .logo-container {
         flex-grow: 1;
         justify-content: flex-start;
+    }
+
+    .cart-container {
+        position: relative;
+        padding: 5px;
+
+        .cart-quantity {
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-radius: 50%;
+            background: orange;
+            color: white;
+            padding: 0 5px;
+        }
+
+        .cart-icon {
+            cursor: pointer;
+        }
     }
 
     .avatar {

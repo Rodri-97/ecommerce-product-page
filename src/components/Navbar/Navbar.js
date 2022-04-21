@@ -39,12 +39,13 @@ const Navbar = () => {
                 <img src={LogoImg} alt="Logo" />
             </div>
 
-            <div className="container">
+            <div className="container cart-container">
                 <img 
                     src={GrayIconCart} 
                     alt="Cart Icon"
                     className="cart-icon" 
                 />
+                <div className="cart-quantity">1</div>
             </div>
 
             <div className="container">
