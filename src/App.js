@@ -1,4 +1,5 @@
 import "./App.scss";
+
 import Navbar from "./components/Navbar/Navbar.js";
 import ImageSlider from "./components/ImageSlider/ImageSlider.js";
 import Description from "./components/Description/Description.js";
@@ -21,14 +22,24 @@ const App = () => {
       setCartQuantity(cartQuantity + 1);
   }
 
+  const [navbarCartQuantity, setNavbarCartQuantity] = useState(0);
+
+  const updateNavbarCartQuantity = (newQuantity) => {
+    setNavbarCartQuantity(newQuantity);
+    setCartQuantity(1);
+  }
+
   return (
     <div>
-      <Navbar />
+      <Navbar
+        navbarCartQuantity={navbarCartQuantity}
+      />
       <ImageSlider />
       <Description 
         cartQuantity={cartQuantity}
         decreaseCartQuantity={decreaseCartQuantity}
         increaseCartQuantity={increaseCartQuantity} 
+        updateNavbarCartQuantity={updateNavbarCartQuantity}
       />
     </div>
   )

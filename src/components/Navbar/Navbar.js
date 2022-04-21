@@ -7,7 +7,9 @@ import AvatarImg from "../../images/image-avatar.png";
 
 import { useState, useEffect } from "react";
 
-const Navbar = () => {
+const Navbar = (props) => {
+    const { navbarCartQuantity } = props;
+
     const maxMobileWidth = 800;
     const [isMobile, setIsMobile] = useState(window.innerWidth < maxMobileWidth);
 
@@ -45,7 +47,7 @@ const Navbar = () => {
                     alt="Cart Icon"
                     className="cart-icon" 
                 />
-                <div className="cart-quantity">1</div>
+                <div className="cart-quantity">{navbarCartQuantity > 0 ? navbarCartQuantity : null}</div>
             </div>
 
             <div className="container">

@@ -5,7 +5,8 @@ import IconPlus from "../../images/icon-plus.svg";
 import WhiteIconCart from "../../images/white-icon-cart.svg";
 
 const Description = (props) => {
-    const { cartQuantity, decreaseCartQuantity, increaseCartQuantity } = props;
+    const { cartQuantity, decreaseCartQuantity, 
+        increaseCartQuantity, updateNavbarCartQuantity } = props;
 
     return (
         <div className="description">
@@ -44,7 +45,7 @@ const Description = (props) => {
                 </div>
             </div>
 
-            <div className="add-to-cart">
+            <div className="add-to-cart" onClick={() => updateNavbarCartQuantity(cartQuantity)}>
                 <img 
                     src={WhiteIconCart} 
                     alt="Cart Icon"
