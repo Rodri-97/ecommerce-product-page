@@ -1,3 +1,5 @@
+@import "../../globalVariables";
+
 $cartThumbnailSize: 45px;
 $cartPaddingAndGap: 10px;
 $specialOrange: hsl(26, 100%, 55%);
@@ -87,14 +89,14 @@ $specialOrange: hsl(26, 100%, 55%);
 }
 
 /* special media query for Galaxy Fold screens */
-@media all and (max-width: 300px) {
+@media all and (max-width: $galaxyFordMinimalWidth) {
     .show-cart-menu {
         width: 100%;
         right: 0;
     }
 }
 
-@media all and (min-width: 1000px) {
+@media all and (min-width: $desktopMinimalWidth) {
     .show-cart-menu {
         right: 100px;
     }

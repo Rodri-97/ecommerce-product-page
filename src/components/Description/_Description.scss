@@ -1,3 +1,5 @@
+@import "../../globalVariables";
+
 $specialOrange: hsl(26, 100%, 55%);
 $paleOrange: hsl(25, 100%, 94%);
 $deductionPadding: 5px;
@@ -108,7 +110,7 @@ $deductionPadding: 5px;
     padding: 10px 0;
 }
 
-@media all and (min-width: 1000px) {
+@media all and (min-width: $desktopMinimalWidth) {
     .description {
         padding: 50px 0;
 

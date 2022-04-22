@@ -1,3 +1,5 @@
+@import "../../globalVariables";
+
 .nav {
     display: flex;
     flex-direction: row;
@@ -77,7 +79,7 @@
 }
 
 /* special media query for Galaxy Fold screens */
-@media all and (max-width: 300px) {
+@media all and (max-width: $galaxyFordMinimalWidth) {
     .nav {
         gap: 5px;
         padding: 20px 0;

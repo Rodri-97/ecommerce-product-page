@@ -1,3 +1,5 @@
+@import "./globalVariables";
+
 @font-face {
     font-family: "Kumbh Sans";
     src: url("./fonts/Kumbh_Sans/KumbhSans-VariableFont_wght.ttf");
@@ -28,7 +30,7 @@ body {
     }
 }
 
-@media all and (min-width: 1000px) {
+@media all and (min-width: $desktopMinimalWidth) {
     body {
         padding: 0 120px;
 
