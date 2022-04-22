@@ -32,12 +32,18 @@ const ImageSlider = () => {
     }
 
     const thumbnails = [ThumbnailProduct1, ThumbnailProduct2, ThumbnailProduct3, ThumbnailProduct4]
+    const selectedThumbnailStyles = {
+        borderColor: "orange",
+        opacity: 0.4
+    }
     const displayedThumbnails = thumbnails.map((thumbnail, index) => {
         return <img 
                     key={index} 
                     src={thumbnail} 
                     alt={`Product ${index} thumbnail`}
-                    className="thumbnail" 
+                    className="thumbnail"
+                    onClick={() => setCurrentImageIndex(index)}
+                    style={currentImageIndex === index ? selectedThumbnailStyles : null} 
                />
     })
 
