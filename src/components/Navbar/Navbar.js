@@ -7,8 +7,10 @@ import AvatarImg from "../../images/image-avatar.png";
 
 import { useState, useEffect } from "react";
 
+import Cart from "../Cart/Cart.js";
+
 const Navbar = (props) => {
-    const { navbarCartQuantity } = props;
+    const { navbarCartQuantity, resetNavbarCartQuantity } = props;
 
     const maxMobileWidth = 800;
     const [isMobile, setIsMobile] = useState(window.innerWidth < maxMobileWidth);
@@ -20,12 +22,25 @@ const Navbar = (props) => {
         });
     });
 
-    const [displayMenu, setDisplayMenu] = useState(false);
+    const [displayOptionsMenu, setDisplayOptionsMenu] = useState(false);
 
     const listElements = ["Collections", "Men", "Women", "About", "Contact"];
     const displayedList = listElements.map((element) => {
-        return <li key={element} className="menu-element">{element}</li>
+        return <li key={element} className="options-menu-element">{element}</li>
     })
+
+    const [displayCartMenu, setDisplayCartMenu] = useState(false);
+
+    const toggleMenu = (menu) => {
+        if (menu === "cart") {
+            if (displayOptionsMenu === true) setDisplayOptionsMenu(false);
+            setDisplayCartMenu(!displayCartMenu);
+            return;
+        }
+
+        if (displayCartMenu === true) setDisplayCartMenu(false);
+        setDisplayOptionsMenu(!displayOptionsMenu);
+    }
 
     return (
         <nav className="nav">
@@ -33,7 +48,7 @@ const Navbar = (props) => {
                 <img src={MenuIcon} 
                      alt="Menu Icon" 
                      className="hamburger-menu" 
-                     onClick={() => setDisplayMenu(!displayMenu)}
+                     onClick={() => toggleMenu("options")}
                 />
             </div>
 
@@ -41,7 +56,7 @@ const Navbar = (props) => {
                 <img src={LogoImg} alt="Logo" />
             </div>
 
-            <div className="container cart-container">
+            <div className="container cart-container" onClick={() => toggleMenu("cart")}>
                 <img 
                     src={GrayIconCart} 
                     alt="Cart Icon"
@@ -54,9 +69,15 @@ const Navbar = (props) => {
                 <img src={AvatarImg} className="avatar" alt="Avatar" />
             </div>
 
-            <ul className={(displayMenu && isMobile) ? "expand-menu" : "hide-menu"}>
+            <ul className={(displayOptionsMenu && isMobile) ? "show-options-menu" : "hide-options-menu"}>
                 {displayedList}
             </ul>
+
+            <Cart 
+                displayCartMenu={displayCartMenu} 
+                navbarCartQuantity={navbarCartQuantity}
+                resetNavbarCartQuantity={resetNavbarCartQuantity}
+            />
         </nav>
     )
 }

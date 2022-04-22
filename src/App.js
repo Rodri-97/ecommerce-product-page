@@ -29,10 +29,13 @@ const App = () => {
     setCartQuantity(1);
   }
 
+  const resetNavbarCartQuantity = () => setNavbarCartQuantity(0);
+
   return (
     <div>
       <Navbar
         navbarCartQuantity={navbarCartQuantity}
+        resetNavbarCartQuantity={resetNavbarCartQuantity}
       />
       <ImageSlider />
       <Description 

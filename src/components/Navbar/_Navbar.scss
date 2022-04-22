@@ -41,19 +41,22 @@
         cursor: pointer;
     }
 
-    .hide-menu {
+    .hide-options-menu {
         display: none;
     }
 
-    .expand-menu {
+    .show-options-menu, .show-cart-menu {
+        position: absolute;
+        z-index: 99;
+        top: 80px;
+    }
+
+    .show-options-menu {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         list-style-type: none;
-        position: absolute;
-        z-index: 99;
-        top: 80px;
         left: 50%;
         transform: translate(-50%, 0);
         gap: 20px;
@@ -61,7 +64,7 @@
         width: 100%;
         background: white;
 
-        .menu-element {
+        .options-menu-element {
             color: gray;
             border: 3px solid transparent;
             cursor: pointer;
