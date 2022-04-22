@@ -12,7 +12,7 @@ import Cart from "../Cart/Cart.js";
 const Navbar = (props) => {
     const { navbarCartQuantity, resetNavbarCartQuantity } = props;
 
-    const maxMobileWidth = 800;
+    const maxMobileWidth = 1200;
     const [isMobile, setIsMobile] = useState(window.innerWidth < maxMobileWidth);
 
     useEffect(() => {
