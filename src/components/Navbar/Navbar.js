@@ -44,7 +44,7 @@ const Navbar = (props) => {
 
     return (
         <nav className="nav">
-            <div className="container">
+            <div className="container hamburger-container">
                 <img src={MenuIcon} 
                      alt="Menu Icon" 
                      className="hamburger-menu" 
@@ -55,6 +55,10 @@ const Navbar = (props) => {
             <div className="container logo-container">
                 <img src={LogoImg} alt="Logo" />
             </div>
+
+            <ul className={!isMobile ? "desktop-options-menu" : "hide-menu"}>
+                {displayedList}
+            </ul>
 
             <div className="container cart-container" onClick={() => toggleMenu("cart")}>
                 <img 
@@ -69,7 +73,7 @@ const Navbar = (props) => {
                 <img src={AvatarImg} className="avatar" alt="Avatar" />
             </div>
 
-            <ul className={(displayOptionsMenu && isMobile) ? "show-options-menu" : "hide-options-menu"}>
+            <ul className={(displayOptionsMenu && isMobile) ? "show-options-menu" : "hide-menu"}>
                 {displayedList}
             </ul>
 
