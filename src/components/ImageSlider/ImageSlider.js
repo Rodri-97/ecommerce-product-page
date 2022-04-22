@@ -8,6 +8,11 @@ import ImgProduct4 from "../../images/image-product-4.jpg";
 import IconPrevious from "../../images/icon-previous.svg";
 import IconNext from "../../images/icon-next.svg";
 
+import ThumbnailProduct1 from "../../images/image-product-1-thumbnail.jpg";
+import ThumbnailProduct2 from "../../images/image-product-2-thumbnail.jpg";
+import ThumbnailProduct3 from "../../images/image-product-3-thumbnail.jpg";
+import ThumbnailProduct4 from "../../images/image-product-4-thumbnail.jpg";
+
 import { useState } from "react";
 
 const ImageSlider = () => {
@@ -25,6 +30,16 @@ const ImageSlider = () => {
         const newIndex = (currentImageIndex + 1) % productImages.length
         setCurrentImageIndex(newIndex);
     }
+
+    const thumbnails = [ThumbnailProduct1, ThumbnailProduct2, ThumbnailProduct3, ThumbnailProduct4]
+    const displayedThumbnails = thumbnails.map((thumbnail, index) => {
+        return <img 
+                    key={index} 
+                    src={thumbnail} 
+                    alt={`Product ${index} thumbnail`}
+                    className="thumbnail" 
+               />
+    })
 
     return (
         <div className="image-slider">
@@ -49,6 +64,10 @@ const ImageSlider = () => {
                     <img src={IconNext} alt="Next Icon" />
                 </div>
 
+            </div>
+
+            <div className="thumbnails-container">
+                {displayedThumbnails}
             </div>
         </div>
     )
