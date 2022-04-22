@@ -92,4 +92,11 @@ $specialOrange: hsl(26, 100%, 55%);
         width: 100%;
         right: 0;
     }
- }
+}
+
+@media all and (min-width: 1000px) {
+    .show-cart-menu {
+        right: 100px;
+    }
+}
+

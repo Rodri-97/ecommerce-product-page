@@ -107,3 +107,31 @@ $deductionPadding: 5px;
 .description > * {
     padding: 10px 0;
 }
+
+@media all and (min-width: 1000px) {
+    .description {
+        padding: 50px 0;
+
+        .add-quantity-container {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+
+            .cart-quantity-container {
+                flex: 1;
+            }
+
+            .add-to-cart {
+                flex: 2;
+            }
+        }
+
+        .prices {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            padding-right: 50%;
+            gap: 10px;
+        }
+    }
+}

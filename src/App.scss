@@ -10,6 +10,32 @@
     font-family: "Kumbh Sans";
 }
 
-img {
-    display: block;
+body {
+    img {
+        display: block;
+    }
+    
+    .main {
+        border: 3px solid red;
+        padding: 10px;
+    
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main > * {
+        border: 3px solid purple;
+    }
+}
+
+@media all and (min-width: 1000px) {
+    body {
+        padding: 0 120px;
+
+        .main {
+            flex-direction: row;
+            gap: 100px;
+            padding: 80px 0;
+        }
+    }
 }

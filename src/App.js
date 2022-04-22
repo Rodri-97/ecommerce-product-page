@@ -37,13 +37,15 @@ const App = () => {
         navbarCartQuantity={navbarCartQuantity}
         resetNavbarCartQuantity={resetNavbarCartQuantity}
       />
-      <ImageSlider />
-      <Description 
-        cartQuantity={cartQuantity}
-        decreaseCartQuantity={decreaseCartQuantity}
-        increaseCartQuantity={increaseCartQuantity} 
-        updateNavbarCartQuantity={updateNavbarCartQuantity}
-      />
+      <main className="main">
+        <ImageSlider />
+        <Description 
+          cartQuantity={cartQuantity}
+          decreaseCartQuantity={decreaseCartQuantity}
+          increaseCartQuantity={increaseCartQuantity} 
+          updateNavbarCartQuantity={updateNavbarCartQuantity}
+        />
+      </main>
     </div>
   )
 }

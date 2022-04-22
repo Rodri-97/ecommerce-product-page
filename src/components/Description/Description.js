@@ -27,33 +27,34 @@ const Description = (props) => {
                 <div className="old-price">$250.00</div>
             </div>
 
-            <div className="cart-quantity-container">
-                <div 
-                    className="minus-container"
-                    onClick={() => decreaseCartQuantity()}
-                >
-                    <img src={IconMinus} alt="Minus Icon"/>
+            <div className="add-quantity-container">
+                <div className="cart-quantity-container">
+                    <div 
+                        className="minus-container"
+                        onClick={() => decreaseCartQuantity()}
+                    >
+                        <img src={IconMinus} alt="Minus Icon"/>
+                    </div>
+
+                    <div className="cart-quantity">{cartQuantity}</div>
+                    
+                    <div 
+                        className="plus-container"
+                        onClick={() => increaseCartQuantity()}
+                    >
+                        <img src={IconPlus} alt="Plus Icon"/>
+                    </div>
                 </div>
 
-                <div className="cart-quantity">{cartQuantity}</div>
-                
-                <div 
-                    className="plus-container"
-                    onClick={() => increaseCartQuantity()}
-                >
-                    <img src={IconPlus} alt="Plus Icon"/>
+                <div className="add-to-cart" onClick={() => updateNavbarCartQuantity(cartQuantity)}>
+                    <img 
+                        src={WhiteIconCart} 
+                        alt="Cart Icon"
+                        className="cart-icon"
+                    />
+                    <span>Add to cart</span>
                 </div>
             </div>
-
-            <div className="add-to-cart" onClick={() => updateNavbarCartQuantity(cartQuantity)}>
-                <img 
-                    src={WhiteIconCart} 
-                    alt="Cart Icon"
-                    className="cart-icon"
-                />
-                <span>Add to cart</span>
-            </div>
-
         </div>
     )
 }
