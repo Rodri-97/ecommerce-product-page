@@ -75,3 +75,15 @@
         }
     }
 }
+
+.nav > * {
+    border: 3px solid red;
+}
+
+/* special media query for Galaxy Fold screens */
+@media all and (max-width: 300px) {
+    .nav {
+        gap: 5px;
+        padding: 0px;
+    }
+}
