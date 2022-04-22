@@ -85,3 +85,11 @@ $specialOrange: hsl(26, 100%, 55%);
         }
     }
 }
+
+/* special media query for Galaxy Fold screens */
+@media all and (max-width: 300px) {
+    .show-cart-menu {
+        width: 100%;
+        right: 0;
+    }
+ }
