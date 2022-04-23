@@ -17,8 +17,24 @@ import { useState } from "react";
 
 const ImageSlider = () => {
     const productImages = [ImgProduct1, ImgProduct2, ImgProduct3, ImgProduct4];
-
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const thumbnails = [ThumbnailProduct1, ThumbnailProduct2, ThumbnailProduct3, ThumbnailProduct4]
+    
+    const selectedThumbnailStyles = {
+        borderColor: "orange",
+        opacity: 0.4
+    }
+    
+    const displayedThumbnails = thumbnails.map((thumbnail, index) => {
+        return <img 
+                    key={index} 
+                    src={thumbnail} 
+                    alt={`Product ${index} thumbnail`}
+                    className="thumbnail"
+                    onClick={() => setCurrentImageIndex(index)}
+                    style={currentImageIndex === index ? selectedThumbnailStyles : null} 
+               />
+    })
 
     const displayPreviousImage = () => {
         let newIndex = currentImageIndex - 1;
@@ -30,22 +46,6 @@ const ImageSlider = () => {
         const newIndex = (currentImageIndex + 1) % productImages.length
         setCurrentImageIndex(newIndex);
     }
-
-    const thumbnails = [ThumbnailProduct1, ThumbnailProduct2, ThumbnailProduct3, ThumbnailProduct4]
-    const selectedThumbnailStyles = {
-        borderColor: "orange",
-        opacity: 0.4
-    }
-    const displayedThumbnails = thumbnails.map((thumbnail, index) => {
-        return <img 
-                    key={index} 
-                    src={thumbnail} 
-                    alt={`Product ${index} thumbnail`}
-                    className="thumbnail"
-                    onClick={() => setCurrentImageIndex(index)}
-                    style={currentImageIndex === index ? selectedThumbnailStyles : null} 
-               />
-    })
 
     return (
         <div className="image-slider">

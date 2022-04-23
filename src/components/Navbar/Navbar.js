@@ -13,13 +13,12 @@ const Navbar = (props) => {
     const { navbarCartQuantity, resetNavbarCartQuantity, isMobile } = props;
 
     const [displayOptionsMenu, setDisplayOptionsMenu] = useState(false);
+    const [displayCartMenu, setDisplayCartMenu] = useState(false);
 
     const listElements = ["Collections", "Men", "Women", "About", "Contact"];
     const displayedList = listElements.map((element) => {
         return <li key={element} className="options-menu-element">{element}</li>
     })
-
-    const [displayCartMenu, setDisplayCartMenu] = useState(false);
 
     const toggleMenu = (menu) => {
         if (menu === "cart") {

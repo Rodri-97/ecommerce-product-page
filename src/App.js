@@ -8,6 +8,9 @@ import { useState, useEffect } from "react";
 
 const App = () => {
   const [cartQuantity, setCartQuantity] = useState(1);
+  const [navbarCartQuantity, setNavbarCartQuantity] = useState(0);
+  const maxMobileWidth = 1200;
+  const [isMobile, setIsMobile] = useState(window.innerWidth < maxMobileWidth);
 
   const decreaseCartQuantity = () => {
       if (cartQuantity < 2) return;
@@ -22,17 +25,12 @@ const App = () => {
       setCartQuantity(cartQuantity + 1);
   }
 
-  const [navbarCartQuantity, setNavbarCartQuantity] = useState(0);
-
   const updateNavbarCartQuantity = (newQuantity) => {
     setNavbarCartQuantity(newQuantity);
     setCartQuantity(1);
   }
 
   const resetNavbarCartQuantity = () => setNavbarCartQuantity(0);
-
-  const maxMobileWidth = 1200;
-  const [isMobile, setIsMobile] = useState(window.innerWidth < maxMobileWidth);
 
   useEffect(() => {
       window.addEventListener("resize", () => {
