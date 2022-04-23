@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar/Navbar.js";
 import ImageSlider from "./components/ImageSlider/ImageSlider.js";
 import Description from "./components/Description/Description.js";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const App = () => {
   const [cartQuantity, setCartQuantity] = useState(1);
@@ -31,11 +31,22 @@ const App = () => {
 
   const resetNavbarCartQuantity = () => setNavbarCartQuantity(0);
 
+  const maxMobileWidth = 1200;
+  const [isMobile, setIsMobile] = useState(window.innerWidth < maxMobileWidth);
+
+  useEffect(() => {
+      window.addEventListener("resize", () => {
+          const isItMobile = window.innerWidth < maxMobileWidth;
+          if (isItMobile !== isMobile) setIsMobile(isItMobile);
+      });
+  });
+
   return (
     <div>
       <Navbar
         navbarCartQuantity={navbarCartQuantity}
         resetNavbarCartQuantity={resetNavbarCartQuantity}
+        isMobile={isMobile}
       />
       <main className="main">
         <ImageSlider />

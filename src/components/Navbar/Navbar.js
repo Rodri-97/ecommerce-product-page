@@ -5,22 +5,12 @@ import LogoImg from "../../images/logo.svg";
 import GrayIconCart from "../../images/gray-icon-cart.svg";
 import AvatarImg from "../../images/image-avatar.png";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import Cart from "../Cart/Cart.js";
 
 const Navbar = (props) => {
-    const { navbarCartQuantity, resetNavbarCartQuantity } = props;
-
-    const maxMobileWidth = 1200;
-    const [isMobile, setIsMobile] = useState(window.innerWidth < maxMobileWidth);
-
-    useEffect(() => {
-        window.addEventListener("resize", () => {
-            const isItMobile = window.innerWidth < maxMobileWidth;
-            if (isItMobile !== isMobile) setIsMobile(isItMobile);
-        });
-    });
+    const { navbarCartQuantity, resetNavbarCartQuantity, isMobile } = props;
 
     const [displayOptionsMenu, setDisplayOptionsMenu] = useState(false);
 
