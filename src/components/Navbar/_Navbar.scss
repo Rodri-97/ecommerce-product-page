@@ -41,8 +41,10 @@ $navPadding: 20px;
         width: 40px;
     }
 
-    .hamburger-menu {
-        cursor: pointer;
+    .icon-container {
+        .hamburger-icon, .close-icon {
+            cursor: pointer;
+        }
     }
 
     .hide-menu {
@@ -96,7 +98,7 @@ $navPadding: 20px;
         padding: 0;
         gap: 30px;
 
-        .hamburger-container {
+        .icon-container {
             display: none;
         }
 

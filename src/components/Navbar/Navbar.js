@@ -1,6 +1,7 @@
 import "./_Navbar.scss";
 
-import MenuIcon from "../../images/icon-menu.svg";
+import HamburgerIcon from "../../images/icon-menu.svg";
+import CloseIcon from "../../images/icon-close.svg";
 import LogoImg from "../../images/logo.svg";
 import GrayIconCart from "../../images/gray-icon-cart.svg";
 import AvatarImg from "../../images/image-avatar.png";
@@ -33,10 +34,10 @@ const Navbar = (props) => {
 
     return (
         <nav className="nav">
-            <div className="container hamburger-container">
-                <img src={MenuIcon} 
-                     alt="Menu Icon" 
-                     className="hamburger-menu" 
+            <div className="container icon-container">
+                <img src={displayOptionsMenu ? CloseIcon : HamburgerIcon} 
+                     className={displayOptionsMenu ? "close-icon" : "hamburger-icon"}
+                     alt="Icon"
                      onClick={() => toggleMenu("options")}
                 />
             </div>
