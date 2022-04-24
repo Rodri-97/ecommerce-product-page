@@ -57,12 +57,12 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### What I learned
 
-I had been using flex more often than grid in my last projects, but for this one I ended up using grid more often because it’s more useful for making elements the same size.
-I also learned how to import pass a whole component (ImageSlider) as prop to another component (Lightbox).
+- I had been using flex more often than grid in my last projects, but for this one I ended up using grid more often because it’s more useful for making elements the same size.
+- I also learned how to import pass a whole component (ImageSlider) as prop to another component (Lightbox).
 
 ### Continued development
 
-I'm still not sure what's the best way to style React applications. At the start of this project I thought I would be using CSS modules but then I decided that plain Sass would be a cleaner and less tedious solution.
+I'm still not sure what's the best way to style React applications. At the start of this project I thought I would be using CSS modules but then I decided that plain Sass would be a cleaner and less tedious solution. I might try styled components in the future.
 
 ### Useful resources
 
