@@ -4,7 +4,7 @@ import IconPrevious from "../../images/icon-previous.svg";
 import IconNext from "../../images/icon-next.svg";
 
 const ImageSlider = (props) => {
-    const { productImages, currentImageIndex, changeCurrentImage, thumbnails } = props;
+    const { productImages, currentImageIndex, changeCurrentImage, thumbnails, isMobile, showLightbox } = props;
     
     const selectedThumbnailStyles = {
         borderColor: "orange",
@@ -46,7 +46,8 @@ const ImageSlider = (props) => {
 
                 <img src={productImages[currentImageIndex]} 
                      alt="Product"
-                     className="current-image" 
+                     className="current-image"
+                     onClick={isMobile ? null : () => showLightbox()} 
                 />
 
                 <div 

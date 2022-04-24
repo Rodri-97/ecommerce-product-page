@@ -3,6 +3,7 @@ import "./App.scss";
 import Navbar from "./components/Navbar/Navbar.js";
 import ImageSlider from "./components/ImageSlider/ImageSlider.js";
 import Description from "./components/Description/Description.js";
+import Lightbox from "./components/Lightbox/Lightbox.js";
 
 import ImgProduct1 from "./images/image-product-1.jpg";
 import ImgProduct2 from "./images/image-product-2.jpg";
@@ -24,6 +25,7 @@ const App = () => {
   const productImages = [ImgProduct1, ImgProduct2, ImgProduct3, ImgProduct4];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const thumbnails = [ThumbnailProduct1, ThumbnailProduct2, ThumbnailProduct3, ThumbnailProduct4]
+  const [lightboxActive, setLightboxActive] = useState(false);
 
   const decreaseCartQuantity = () => {
       if (cartQuantity < 2) return;
@@ -54,6 +56,10 @@ const App = () => {
 
   const changeCurrentImage = (newIndex) => setCurrentImageIndex(newIndex);
 
+  const showLightbox = () => setLightboxActive(true);
+
+  const hideLightbox = () => setLightboxActive(false);
+
   return (
     <div>
       <Navbar
@@ -67,12 +73,27 @@ const App = () => {
           currentImageIndex={currentImageIndex}
           changeCurrentImage={changeCurrentImage}
           thumbnails={thumbnails}
+          isMobile={isMobile}
+          showLightbox={showLightbox}
         />
         <Description 
           cartQuantity={cartQuantity}
           decreaseCartQuantity={decreaseCartQuantity}
           increaseCartQuantity={increaseCartQuantity} 
           updateNavbarCartQuantity={updateNavbarCartQuantity}
+        />
+        <Lightbox 
+          lightboxActive={lightboxActive}
+          hideLightbox={hideLightbox}
+          ImageSlider={<ImageSlider
+            productImages={productImages}
+            currentImageIndex={currentImageIndex}
+            changeCurrentImage={changeCurrentImage}
+            thumbnails={thumbnails}
+            isMobile={isMobile}
+            showLightbox={showLightbox} 
+          />}
+          isMobile={isMobile} 
         />
       </main>
     </div>
