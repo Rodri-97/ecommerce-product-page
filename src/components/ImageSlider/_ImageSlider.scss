@@ -78,6 +78,7 @@ $desktopImagesBorderRadius: 10px;
 
                 &:hover {
                     opacity: 0.4;
+                    filter: brightness(150%);
                 }
             }
         }
