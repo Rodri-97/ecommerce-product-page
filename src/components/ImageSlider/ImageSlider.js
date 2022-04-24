@@ -6,20 +6,22 @@ import IconNext from "../../images/icon-next.svg";
 const ImageSlider = (props) => {
     const { productImages, currentImageIndex, changeCurrentImage, thumbnails, isMobile, showLightbox } = props;
     
-    const selectedThumbnailStyles = {
-        borderColor: "orange",
-        opacity: 0.4
-    }
-    
     const displayedThumbnails = thumbnails.map((thumbnail, index) => {
-        return <img 
+        return <div 
                     key={index} 
-                    src={thumbnail} 
-                    alt={`Product ${index} thumbnail`}
-                    className="thumbnail"
-                    onClick={() => changeCurrentImage(index)}
-                    style={currentImageIndex === index ? selectedThumbnailStyles : null} 
-               />
+                    className="thumbnail-container"
+                    onClick={() => changeCurrentImage(index)} 
+                >
+                    <div 
+                        className="bright-overlay"
+                        style={currentImageIndex === index ? { borderColor: "orange", background: "rgba(255, 255, 255, 0.7)"} : null}
+                    ></div>
+                    <img 
+                        src={thumbnail} 
+                        alt={`Product ${index} thumbnail`}
+                        className="thumbnail"
+                    />
+               </div>
     })
 
     const displayPreviousImage = () => {
