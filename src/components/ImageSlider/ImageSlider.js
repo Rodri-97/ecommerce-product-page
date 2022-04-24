@@ -1,24 +1,10 @@
 import "./_ImageSlider.scss";
 
-import ImgProduct1 from "../../images/image-product-1.jpg";
-import ImgProduct2 from "../../images/image-product-2.jpg";
-import ImgProduct3 from "../../images/image-product-3.jpg";
-import ImgProduct4 from "../../images/image-product-4.jpg";
-
 import IconPrevious from "../../images/icon-previous.svg";
 import IconNext from "../../images/icon-next.svg";
 
-import ThumbnailProduct1 from "../../images/image-product-1-thumbnail.jpg";
-import ThumbnailProduct2 from "../../images/image-product-2-thumbnail.jpg";
-import ThumbnailProduct3 from "../../images/image-product-3-thumbnail.jpg";
-import ThumbnailProduct4 from "../../images/image-product-4-thumbnail.jpg";
-
-import { useState } from "react";
-
-const ImageSlider = () => {
-    const productImages = [ImgProduct1, ImgProduct2, ImgProduct3, ImgProduct4];
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const thumbnails = [ThumbnailProduct1, ThumbnailProduct2, ThumbnailProduct3, ThumbnailProduct4]
+const ImageSlider = (props) => {
+    const { productImages, currentImageIndex, changeCurrentImage, thumbnails } = props;
     
     const selectedThumbnailStyles = {
         borderColor: "orange",
@@ -31,7 +17,7 @@ const ImageSlider = () => {
                     src={thumbnail} 
                     alt={`Product ${index} thumbnail`}
                     className="thumbnail"
-                    onClick={() => setCurrentImageIndex(index)}
+                    onClick={() => changeCurrentImage(index)}
                     style={currentImageIndex === index ? selectedThumbnailStyles : null} 
                />
     })
@@ -39,12 +25,12 @@ const ImageSlider = () => {
     const displayPreviousImage = () => {
         let newIndex = currentImageIndex - 1;
         if (newIndex < 0) newIndex += productImages.length;
-        setCurrentImageIndex(newIndex);
+        changeCurrentImage(newIndex);
     }
 
     const displayNextImage = () => {
         const newIndex = (currentImageIndex + 1) % productImages.length
-        setCurrentImageIndex(newIndex);
+        changeCurrentImage(newIndex);
     }
 
     return (

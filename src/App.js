@@ -4,6 +4,16 @@ import Navbar from "./components/Navbar/Navbar.js";
 import ImageSlider from "./components/ImageSlider/ImageSlider.js";
 import Description from "./components/Description/Description.js";
 
+import ImgProduct1 from "./images/image-product-1.jpg";
+import ImgProduct2 from "./images/image-product-2.jpg";
+import ImgProduct3 from "./images/image-product-3.jpg";
+import ImgProduct4 from "./images/image-product-4.jpg";
+
+import ThumbnailProduct1 from "./images/image-product-1-thumbnail.jpg";
+import ThumbnailProduct2 from "./images/image-product-2-thumbnail.jpg";
+import ThumbnailProduct3 from "./images/image-product-3-thumbnail.jpg";
+import ThumbnailProduct4 from "./images/image-product-4-thumbnail.jpg";
+
 import { useState, useEffect } from "react";
 
 const App = () => {
@@ -11,6 +21,9 @@ const App = () => {
   const [navbarCartQuantity, setNavbarCartQuantity] = useState(0);
   const maxMobileWidth = 1200;
   const [isMobile, setIsMobile] = useState(window.innerWidth < maxMobileWidth);
+  const productImages = [ImgProduct1, ImgProduct2, ImgProduct3, ImgProduct4];
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const thumbnails = [ThumbnailProduct1, ThumbnailProduct2, ThumbnailProduct3, ThumbnailProduct4]
 
   const decreaseCartQuantity = () => {
       if (cartQuantity < 2) return;
@@ -39,6 +52,8 @@ const App = () => {
       });
   });
 
+  const changeCurrentImage = (newIndex) => setCurrentImageIndex(newIndex);
+
   return (
     <div>
       <Navbar
@@ -47,7 +62,12 @@ const App = () => {
         isMobile={isMobile}
       />
       <main className="main">
-        <ImageSlider />
+        <ImageSlider
+          productImages={productImages}
+          currentImageIndex={currentImageIndex}
+          changeCurrentImage={changeCurrentImage}
+          thumbnails={thumbnails}
+        />
         <Description 
           cartQuantity={cartQuantity}
           decreaseCartQuantity={decreaseCartQuantity}
