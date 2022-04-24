@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/ecommerce-product-page/static/css/main.2688baa6.css",
+    "main.js": "/ecommerce-product-page/static/js/main.df63d9a7.js",
+    "static/media/image-product-2.jpg": "/ecommerce-product-page/static/media/image-product-2.c8bb0aaccecdebb16596.jpg",
+    "static/media/KumbhSans-VariableFont_wght.ttf": "/ecommerce-product-page/static/media/KumbhSans-VariableFont_wght.de0d69a8dd1e40bb7010.ttf",
+    "static/media/image-product-1.jpg": "/ecommerce-product-page/static/media/image-product-1.520cc50bd13955f55cb2.jpg",
+    "static/media/image-product-3.jpg": "/ecommerce-product-page/static/media/image-product-3.af5c71ba9ffcc0b8b54d.jpg",
+    "static/media/image-product-4.jpg": "/ecommerce-product-page/static/media/image-product-4.9962862ef3eff6d65e5b.jpg",
+    "static/media/logo.svg": "/ecommerce-product-page/static/media/logo.4fe9c1e86cf9bf600f0c239f6a6e5317.svg",
+    "static/media/icon-delete.svg": "/ecommerce-product-page/static/media/icon-delete.1fd1f1f7d9f8ce5557b44ca3470a18b8.svg",
+    "index.html": "/ecommerce-product-page/index.html",
+    "static/media/gray-icon-cart.svg": "/ecommerce-product-page/static/media/gray-icon-cart.539ec608f50e707c94d583ec11acf99d.svg",
+    "static/media/white-icon-cart.svg": "/ecommerce-product-page/static/media/white-icon-cart.e1438c4352a7c6e27fc2647578c4466e.svg",
+    "static/media/icon-plus.svg": "/ecommerce-product-page/static/media/icon-plus.b297868c5f938612f4f099f9f9d73aea.svg",
+    "static/media/icon-minus.svg": "/ecommerce-product-page/static/media/icon-minus.f5073aa8273785ecf6b7811630782736.svg",
+    "static/media/icon-close.svg": "/ecommerce-product-page/static/media/icon-close.c390448669f3a8a4c4b2ada2f9938959.svg",
+    "static/media/icon-menu.svg": "/ecommerce-product-page/static/media/icon-menu.c6107d03f1edcf73523ebd8cbc50a443.svg",
+    "static/media/icon-previous.svg": "/ecommerce-product-page/static/media/icon-previous.80616402c611cc0a6651d0b751da8a9b.svg",
+    "static/media/icon-next.svg": "/ecommerce-product-page/static/media/icon-next.9621183a551a9985b4bd7536c9a69c66.svg",
+    "main.2688baa6.css.map": "/ecommerce-product-page/static/css/main.2688baa6.css.map",
+    "main.df63d9a7.js.map": "/ecommerce-product-page/static/js/main.df63d9a7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2688baa6.css",
+    "static/js/main.df63d9a7.js"
+  ]
+}
