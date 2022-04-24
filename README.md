@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: https://www.frontendmentor.io/solutions/ecommerce-product-page-using-sass-react-ryQAdiMr9
-- Live Site URL: https://rodri-97.github.io/ecommerce-product-page/
+- [Solution URL](https://www.frontendmentor.io/solutions/ecommerce-product-page-using-sass-react-ryQAdiMr9)
+- [Live Site URL](https://rodri-97.github.io/ecommerce-product-page/)
 
 ## My process
 
