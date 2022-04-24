@@ -50,7 +50,7 @@ Users should be able to:
 ### What I learned
 
 - I had been using flex more often than grid in my last projects, but for this one I ended up using grid more often because it’s more useful for making elements the same size.
-- I also learned how to import pass a whole component (ImageSlider) as prop to another component (Lightbox).
+- I also learned how to pass a whole component (ImageSlider) as prop to another component (Lightbox).
 
 ### Continued development
 
